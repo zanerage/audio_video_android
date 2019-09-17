@@ -12,7 +12,7 @@ import android.widget.SeekBar;
 import android.widget.Toast;
 import android.widget.VideoView;
 
-public class MainActivity extends AppCompatActivity implements  View.OnClickListener{
+public class MainActivity extends AppCompatActivity implements  View.OnClickListener,SeekBar.OnSeekBarChangeListener{
 //UI COMPONENTS
     private VideoView myVideoView;
     private Button btnPlay;
@@ -71,6 +71,8 @@ public class MainActivity extends AppCompatActivity implements  View.OnClickList
             }
         });
 
+        moveseekbar.setOnSeekBarChangeListener(MainActivity.this);
+
 
 
     }
@@ -101,6 +103,23 @@ public class MainActivity extends AppCompatActivity implements  View.OnClickList
         }
 
 
+
+    }
+
+    @Override
+    public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+        if (fromUser) {
+
+        }
+    }
+
+    @Override
+    public void onStartTrackingTouch(SeekBar seekBar) {
+
+    }
+
+    @Override
+    public void onStopTrackingTouch(SeekBar seekBar) {
 
     }
 }
